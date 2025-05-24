@@ -184,18 +184,20 @@ export default function App() {
           onClick={() => setShowSidebar(s => !s)}
           sx={{
             position: 'absolute',
-            top: 16,
+            top: 70, // Move down on all screens to avoid overlapping content
             left: isTablet ? 16 : (showSidebar ? `calc(${sidebarWidth} - 20px)` : 16),
             zIndex: theme.zIndex.appBar + 2,
             bgcolor: 'background.paper',
             border: '1px solid #E5E7EB',
             boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-            transition: theme.transitions.create(['left'], {
+            opacity: 0.7, // Reduced opacity on all screens
+            transition: theme.transitions.create(['left', 'opacity'], {
               easing: theme.transitions.easing.sharp,
               duration: theme.transitions.duration.enteringScreen,
             }),
             '&:hover': { 
               bgcolor: 'background.paper',
+              opacity: 1, // Full opacity on hover
             },
           }}
           size="small"
@@ -268,18 +270,20 @@ export default function App() {
           onClick={() => setShowCopilot(s => !s)}
           sx={{
             position: 'absolute',
-            top: 16,
+            top: 70, // Move down on all screens to avoid overlapping content
             right: isTablet ? 16 : (showCopilot ? `calc(${copilotWidth} - 20px)` : 16),
             zIndex: theme.zIndex.appBar + 2,
             bgcolor: 'background.paper',
             border: '1px solid #E5E7EB',
             boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-            transition: theme.transitions.create(['right'], {
+            opacity: 0.7, // Reduced opacity on all screens
+            transition: theme.transitions.create(['right', 'opacity'], {
               easing: theme.transitions.easing.sharp,
               duration: theme.transitions.duration.enteringScreen,
             }),
             '&:hover': { 
               bgcolor: 'background.paper',
+              opacity: 1, // Full opacity on hover
             },
           }}
           size="small"
